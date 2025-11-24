@@ -1,3 +1,4 @@
+# producer/producer.py
 import json
 import time
 import random
@@ -15,13 +16,16 @@ KAFKA_BROKER = "kafka:9092"
 TOPIC = "iot.sensors"
 
 def gen_sensor_event():
+    # garante floats para latitude/longitude (sem Decimal)
+    lat = float(fake.latitude())
+    lon = float(fake.longitude())
     return {
         "device_id": f"device-{random.randint(1,50)}",
         "timestamp": datetime.utcnow().isoformat() + "Z",
         "temperature": round(random.uniform(10.0, 40.0), 2),
         "humidity": round(random.uniform(10.0, 95.0), 2),
-        "latitude": round(fake.latitude(), 6),
-        "longitude": round(fake.longitude(), 6),
+        "latitude": round(lat, 6),
+        "longitude": round(lon, 6),
         "status": random.choice(["OK","WARN","ERROR"]),
         "battery": round(random.uniform(10, 100), 2)
     }
@@ -39,10 +43,11 @@ def main():
             event = gen_sensor_event()
             producer.send(TOPIC, value=event)
             logger.info("Enviado: %s", event)
-            # intervalo variável para simular sensores reais
-            time.sleep(random.uniform(0.2, 1.5))
+            time.sleep(random.uniform(0.2, 1.0))
     except KeyboardInterrupt:
         logger.info("Producer finalizando...")
+    except Exception as e:
+        logger.exception("Erro no producer: %s", e)
     finally:
         producer.flush()
         producer.close()

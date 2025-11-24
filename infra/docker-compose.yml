@@ -53,6 +53,7 @@ services:
       POSTGRES_URL: jdbc:postgresql://postgres:5432/iot
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
+      CHECKPOINT_LOCATION: /checkpoints/spark_iot
     volumes:
       - spark_checkpoints:/checkpoints
     restart: unless-stopped
