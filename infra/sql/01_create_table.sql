@@ -1,4 +1,4 @@
-CREATE TABLE IF NOT EXISTS public.tb_sensor_evento (
+CREATE TABLE IF NOT EXISTS public.sensor_events (
   id SERIAL PRIMARY KEY,
   device_id TEXT,
   timestamp_ts TIMESTAMP,
