@@ -1,5 +1,4 @@
-# testes/teste_payload_schema.py
-import json
+# tests/test_payload_schema.py
 from producer.producer import gen_sensor_event
 
 def test_payload_keys():
@@ -8,4 +7,6 @@ def test_payload_keys():
     assert "temperature" in ev
     assert "humidity" in ev
     assert "timestamp" in ev
-    assert isinstance(ev["temperature"], float) or isinstance(ev["temperature"], int)
+    assert isinstance(ev["temperature"], (float, int))
+    assert isinstance(ev["latitude"], float)
+    assert isinstance(ev["longitude"], float)
