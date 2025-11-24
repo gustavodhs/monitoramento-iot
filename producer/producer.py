@@ -29,7 +29,7 @@ def gen_sensor_event():
 def main():
     producer = KafkaProducer(
         bootstrap_servers=[KAFKA_BROKER],
-        value_serializer=lambda v: json.dumps(v).encode('utf-8'),
+        value_serializer=lambda v: json.dumps(v, default=float).encode('utf-8'),
         retries=5,
         linger_ms=10
     )
