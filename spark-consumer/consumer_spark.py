@@ -53,7 +53,7 @@ def write_to_postgres(batch_df, batch_id):
     ).write \
         .format("jdbc") \
         .option("url", POSTGRES_URL) \
-        .option("dbtable", "public.sensor_events") \
+        .option("dbtable", "public.tb_sensor_evento") \
         .option("user", POSTGRES_USER) \
         .option("password", POSTGRES_PASSWORD) \
         .option("driver", "org.postgresql.Driver") \
