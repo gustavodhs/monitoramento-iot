@@ -22,7 +22,7 @@ def gen_sensor_event():
         "ID_DISPOSITIVO": f"device-{random.randint(1,50)}",
         "TIMESTAMP": datetime.utcnow().isoformat() + "Z",
         "TEMPERATURA": round(random.uniform(10.0, 40.0), 2),
-        "HUMIDADE": round(random.uniform(10.0, 95.0), 2),
+        "UMIDADE": round(random.uniform(10.0, 95.0), 2),
         "LATITUDE": round(lat, 6),
         "LONGITUDE": round(lon, 6),
         "STATUS": random.choice(["OK","WARN","ERROR"]),
