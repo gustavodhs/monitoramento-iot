@@ -1,3 +1,4 @@
+--Criação da tabela de sensor de eventos
 CREATE TABLE IF NOT EXISTS public.tb_sensor_evento (
     ID SERIAL PRIMARY KEY,
     ID_DISPOSITIVO TEXT,
