@@ -133,7 +133,6 @@ Migrar pipeline para:
 - Databricks
 
 ## Considerações Finais
-
 Este projeto entrega um pipeline IoT completo, robusto, escalável.
 Ele utiliza tecnologias do mercado para Big Data e Streaming, com qualidade profissional e documentação completa.
 
