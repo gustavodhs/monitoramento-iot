@@ -95,7 +95,7 @@ Criar um sistema completo de monitoramento IoT em real-time para ingestão, proc
 df = df.withColumn("ALERTA", (col("TEMPERATURA") > 35) | (col("BATERIA") < 15))
 ```
 
-- Todos os eventos são persistidos com:
+Todos os eventos são persistidos com:
 + ID
 + ID_DISPOSITIVO
 + TIMESTAMP original
@@ -126,11 +126,11 @@ df = df.withColumn("ALERTA", (col("TEMPERATURA") > 35) | (col("BATERIA") < 15))
 
 ### Cloud
 
-- Migrar pipeline para:
+Migrar pipeline para:
 
-AWS Glue + EMR
-Azure Data Factory
-Databricks
+- AWS Glue + EMR
+- Azure Data Factory
+- Databricks
 
 ## Considerações Finais
 
