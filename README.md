@@ -22,5 +22,12 @@ Sistema de streaming que simula sensores IoT enviando dados para Kafka. Um consu
 ### Passos
 1. Clone o repositório:
 ```bash
-git clone <repo-url>
-cd iot-streaming-assignment/infra
+git clone https://github.com/gustavodhs/monitoramento-iot
+cd monitoramento-iot/infra
+
+2. Iniciar o Docker:
+
+Abra o menu iniciar → digite: Docker Desktop
+Clique na aplicação e espere até ele mostrar: Docker is Running
+
+

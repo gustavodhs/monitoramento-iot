@@ -16,18 +16,17 @@ KAFKA_BROKER = "kafka:9092"
 TOPIC = "iot.sensors"
 
 def gen_sensor_event():
-    # garante floats para latitude/longitude (sem Decimal)
     lat = float(fake.latitude())
     lon = float(fake.longitude())
     return {
-        "device_id": f"device-{random.randint(1,50)}",
-        "timestamp": datetime.utcnow().isoformat() + "Z",
-        "temperature": round(random.uniform(10.0, 40.0), 2),
-        "humidity": round(random.uniform(10.0, 95.0), 2),
-        "latitude": round(lat, 6),
-        "longitude": round(lon, 6),
-        "status": random.choice(["OK","WARN","ERROR"]),
-        "battery": round(random.uniform(10, 100), 2)
+        "ID_DISPOSITIVO": f"device-{random.randint(1,50)}",
+        "TIMESTAMP": datetime.utcnow().isoformat() + "Z",
+        "TEMPERATURA": round(random.uniform(10.0, 40.0), 2),
+        "HUMIDADE": round(random.uniform(10.0, 95.0), 2),
+        "LATITUDE": round(lat, 6),
+        "LONGITUDE": round(lon, 6),
+        "STATUS": random.choice(["OK","WARN","ERROR"]),
+        "BATERIA": round(random.uniform(10, 100), 2)
     }
 
 def main():
