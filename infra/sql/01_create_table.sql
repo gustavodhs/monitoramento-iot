@@ -1,14 +1,26 @@
-CREATE TABLE IF NOT EXISTS public.sensor_events (
-    id SERIAL PRIMARY KEY,
-    device_id TEXT,
-    timestamp_ts TIMESTAMP,
-    temperature DOUBLE PRECISION,
-    humidity DOUBLE PRECISION,
-    latitude DOUBLE PRECISION,
-    longitude DOUBLE PRECISION,
-    status TEXT,
-    battery DOUBLE PRECISION,
-    alert BOOLEAN,
-    dt_carga TIMESTAMP DEFAULT NOW()
+CREATE TABLE IF NOT EXISTS public.tb_sensor_evento (
+    ID SERIAL PRIMARY KEY,
+    ID_DISPOSITIVO TEXT,
+    TIMESTAMP_TS TIMESTAMP,
+    TEMPERATURA DOUBLE PRECISION,
+    HUMIDADE DOUBLE PRECISION,
+    LATITUDE DOUBLE PRECISION,
+    LONGITUDE DOUBLE PRECISION,
+    STATUS TEXT,
+    BATERIA DOUBLE PRECISION,
+    ALERTA BOOLEAN,
+    DT_CARGA TIMESTAMP DEFAULT NOW()
 );
-  
+
+--     ID SERIAL PRIMARY KEY,
+--     device_id TEXT,
+--     timestamp_ts TIMESTAMP,
+--     temperature DOUBLE PRECISION,
+--     humidity DOUBLE PRECISION,
+--     latitude DOUBLE PRECISION,
+--     longitude DOUBLE PRECISION,
+--     status TEXT,
+--     battery DOUBLE PRECISION,
+--     alert BOOLEAN,
+--     dt_carga TIMESTAMP DEFAULT NOW()
+-- );
