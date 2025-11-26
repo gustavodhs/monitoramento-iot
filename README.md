@@ -3,7 +3,7 @@
 ## Introdução
 Este projeto implementa um pipeline de streaming completo para monitoramento de sensores IoT em tempo real.
 
-Ele atende o desafio técnico proposto, utilizando:
+Ele atende o desafio, utilizando:
 - Producer gerando dados IoT simulados (temperatura, umidade, latitude e longitude, status etc.)
 - Apache Kafka como mensageria
 - Apache Spark Structured Streaming como consumer Big Data
@@ -131,3 +131,10 @@ df = df.withColumn("ALERTA", (col("TEMPERATURA") > 35) | (col("BATERIA") < 15))
 AWS Glue + EMR
 Azure Data Factory
 Databricks
+
+## Considerações Finais
+
+Este projeto entrega um pipeline IoT completo, robusto, escalável.
+Ele utiliza tecnologias do mercado para Big Data e Streaming, com qualidade profissional e documentação completa.
+
+O maior desafio foi na tratativa do spark-consumer, pois não estava consumindo os dados e inserindo no PostgreSQL. A solução aqui foi utilizar jupyter/pyspark-notebook:spark-3.5.0 no FROM do Dockerfile, e incluir jars necessários para rodar a aplicação Spark.
