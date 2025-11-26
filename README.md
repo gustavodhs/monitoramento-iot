@@ -62,8 +62,8 @@ cd monitoramento-iot/infra
 ```
 
 2. Iniciar o Docker:
-Abra o menu iniciar → digite: Docker Desktop
-Clique na aplicação e espere até ele mostrar: Docker is Running
+- Abra o menu iniciar → digite: Docker Desktop
+- Clique na aplicação e espere até ele mostrar: Docker is Running
 
 3. Subir todas as dependências:
 ```bash
