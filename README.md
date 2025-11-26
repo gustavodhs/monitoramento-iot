@@ -3,8 +3,8 @@
 ## Introdução
 Este projeto implementa um pipeline de streaming completo para monitoramento de sensores IoT em tempo real.
 
-Ele atende o desafio técnico proposte, utilizando:
-- Producer gerando dados IoT simulados (temperatura, umidade, coordenadas, status etc.)
+Ele atende o desafio técnico proposto, utilizando:
+- Producer gerando dados IoT simulados (temperatura, umidade, latitude e longitude, status etc.)
 - Apache Kafka como mensageria
 - Apache Spark Structured Streaming como consumer Big Data
 - PostgreSQL como destino final dos dados processados
@@ -72,8 +72,8 @@ docker compose up --build
 
 3. Verificar dados no PostgreSQL
 ```bash
-docker exec -it infra-postgres-1 psql -U postgres -d iot -c "SELECT * FROM sensor_events;"
-docker exec -it infra-postgres-1 psql -U postgres -d iot -c "SELECT COUNT(*) FROM sensor_events;"
+docker exec -it infra-postgres-1 psql -U postgres -d iot -c "SELECT * FROM tb_sensor_evento;"
+docker exec -it infra-postgres-1 psql -U postgres -d iot -c "SELECT COUNT(*) FROM tb_sensor_evento;"
 ```
 
 ## Explicação do Case (Plano de Implementação)
@@ -101,7 +101,7 @@ df = df.withColumn("ALERTA", (col("TEMPERATURA") > 35) | (col("BATERIA") < 15))
 + TIMESTAMP original
 + TIMESTAMP_TS (convertido)
 + TEMPERATURA
-+ HUMIDADE
++ UMIDADE
 + LATITUDE
 + LONGITUDE
 + STATUS
