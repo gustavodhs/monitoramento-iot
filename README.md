@@ -15,6 +15,7 @@ A solução foi projetada seguindo princípios de escalabilidade, resiliência, 
 ## Arquitetura de Solução
 - Producer (Python) -> Kafka topic `iot.sensors` -> Spark Structured Streaming -> PostgreSQL
 
+```
 +----------------+       +---------------------+       +-----------------------+
 |   Producer     | --->  |       Kafka         | --->  |   Spark Structured    |
 | (Python+Faker) |       |  (Mensageria real)  |       |      Streaming        |
@@ -25,6 +26,8 @@ A solução foi projetada seguindo princípios de escalabilidade, resiliência, 
                                                         |     PostgreSQL      |
                                                         | (Armazenamento DB) |
                                                         +---------------------+
+```
+
 
 
 - Componentes orquestrados com Docker Compose.
@@ -89,7 +92,7 @@ Criar um sistema completo de monitoramento IoT em real-time para ingestão, proc
 - Timestamps são normalizados via to_timestamp.
 - Cálculo de alerta:
 ```python
-df = df.withColumn("alert", (col("temperature") > 35) | (col("battery") < 15))
+df = df.withColumn("ALERTA", (col("TEMPERATURA") > 35) | (col("BATERIA") < 15))
 ```
 
 - Todos os eventos são persistidos com:
@@ -111,9 +114,9 @@ df = df.withColumn("alert", (col("temperature") > 35) | (col("battery") < 15))
 
 - Criar API REST para consultar eventos recentes
 - Dashboards (Grafana / Power BI)
-- Deploy em Kubernetes (K8s)
+- Deploy em Kubernetes
 - Adicionar testes unitários
-- Inserir Data Lake (S3 ou MinIO)
+- Inserir Data Lake (S3 ou ADLS)
 - Criar camada de enriquecimento com ML (detecção de anomalias)
 
 ### De arquitetura
