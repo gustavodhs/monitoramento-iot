@@ -128,6 +128,6 @@ df = df.withColumn("ALERTA", (col("TEMPERATURA") > 35) | (col("BATERIA") < 15))
 
 - Migrar pipeline para:
 
-AWS Glue + EMR
-Azure Data Factory
-Databricks
++ AWS Glue + EMR
++ Azure Data Factory
++ Databricks
